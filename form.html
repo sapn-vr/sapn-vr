@@ -221,7 +221,6 @@
 
             formData.forEach((value, key) => {
                 if (data[key]) {
-                    // Si ya existe, convierte en un array
                     if (!Array.isArray(data[key])) {
                         data[key] = [data[key]];
                     }
@@ -231,20 +230,43 @@
                 }
             });
 
+            const embedMessage = {
+                embeds: [{
+                    color: 0x00FF00, // Color verde
+                    title: "📋 Nueva Postulación Recibida",
+                    description: "Detalles de la postulación:",
+                    fields: [
+                        { name: "Nombre Completo", value: data.nombre, inline: true },
+                        { name: "Correo Electrónico", value: data.email, inline: true },
+                        { name: "Edad", value: data.edad, inline: true },
+                        { name: "Género", value: data.genero, inline: true },
+                        { name: "Experiencia Previa", value: data.experiencia, inline: true },
+                        { name: "Motivo para Postular", value: data.motivo, inline: false },
+                        { name: "Habilidades", value: data.habilidades ? data.habilidades.join(", ") : "Ninguna", inline: false },
+                        { name: "Nivel de Educación", value: data.educacion, inline: true },
+                        { name: "Referencia", value: data.referencia, inline: false },
+                        { name: "Comentarios Adicionales", value: data.comentarios || "Ninguno", inline: false }
+                    ],
+                    footer: {
+                        text: "Formulario enviado",
+                    },
+                    timestamp: new Date().toISOString() // Añadiendo el timestamp
+                }]
+            };
+
             fetch('https://discord.com/api/webhooks/1275067867934625833/4IgCL1mcXrj6jLg8usBvft24StfM639Qzv7RiIwsTmgiicRfMLTAcYNe53FUWJT-rTt_', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({
-                    content: JSON.stringify(data, null, 2) // Enviar datos como JSON
-                })
+                body: JSON.stringify(embedMessage)
             })
             .then(response => {
                 if (response.ok) {
                     alert('Formulario enviado con éxito.');
                     document.getElementById('formulario').reset(); // Resetear el formulario
                 } else {
+                    console.error('Error en la respuesta:', response);
                     alert('Error al enviar el formulario.');
                 }
             })
