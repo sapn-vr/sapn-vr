@@ -17,13 +17,12 @@
 
         header {
             background: url('postu.png') no-repeat center bottom;
-            /* Fondo del header */
-            background-size: 100% auto; /* Ajuste del tamaño de fondo */
+            background-size: 100% auto;
 	    background-position: top left;
             color: white;
             padding: 20px;
             text-align: center;
-            height: 400px; /* Ajuste de la altura del header */
+            height: 400px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -70,11 +69,10 @@
 
         h1, h2 {
             color: #000000;
-        }
-        #title_arrow {
-        color: #FFFFFF;
+	    color: #FFFFFF;
 	    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 	    font-size: 4em;
+        }
 
         p {
             margin-bottom: 20px;
@@ -124,7 +122,7 @@
 
 <body>
     <header>
-        <h1 id="title_arrow">Formulario de Postulación</h1>
+        <h1>Formulario de Postulación</h1>
     </header>
 
     <nav>
@@ -260,7 +258,7 @@
                 }]
             };
 
-            fetch('https://discord.com/api/webhooks/1275067867934625833/4IgCL1mcXrj6jLg8usBvft24StfM639Qzv7RiIwsTmgiicRfMLTAcYNe53FUWJT-rTt_', {
+            fetch('YOUR_WEBHOOK_URL', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
