@@ -5,23 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulario de Postulación</title>
     <style>
+        /* Estilos generales */
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
             margin: 0;
+            padding: 0;
+        }
+
+        /* Estilos para el encabezado */
+        header {
+            background-color: #333;
+            color: #fff;
             padding: 20px;
+            text-align: center;
         }
 
-        h1, h2 {
-            color: #333;
+        nav {
+            background-color: #444;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
         }
 
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        nav a:hover {
+            color: #ccc;
+        }
+
+        /* Estilos para el formulario */
         .form-section {
             background: white;
             padding: 20px;
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
+            margin: 20px;
         }
 
         .form-group {
@@ -33,7 +56,7 @@
             margin-bottom: 5px;
         }
 
-        input[type="text"], input[type="file"], textarea {
+        input[type="text"], input[type="file"], textarea, select {
             width: 100%;
             padding: 10px;
             border: 1px solid #ccc;
@@ -56,184 +79,134 @@
         button:hover {
             background-color: #218838;
         }
+
+        /* Estilos para los requisitos */
+        .requirements {
+            background-color: #f8f8f8;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .requirements h3 {
+            margin-top: 0;
+        }
+
+        .requirements ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
     </style>
 </head>
 <body>
+    <header>
+        <h1>Formulario de Postulación</h1>
+    </header>
+
+    <nav>
+        <a href="#">Inicio</a>
+        <a href="#">Servicios</a>
+        <a href="#">Artículo Penal</a>
+        <a href="#">Búsqueda y Captura</a>
+    </nav>
 
     <div class="form-section">
         <h2>Requisitos</h2>
+        <div class="requirements">
+            <h3>Apartado IC</h3>
+            <ul>
+                <li>No tener antecedentes penales</li>
+                <li>Conocimiento de los valores fundamentales del departamento</li>
+                <li>Ausencia de multas</li>
+                <li>Ser Mayor de 18 años</li>
+            </ul>
+        </div>
+        <div class="requirements">
+            <h3>Apartado OOC</h3>
+            <ul>
+                <li>Ser mayor de 14 años</li>
+                <li>Contar con micrófono funcional</li>
+                <li>Tener mínimo 15 horas jugadas</li>
+                <li>Poseer cómo máximo 2 warns administrativos</li>
+                <li>Poseer cómo mínimo 5 puntos de rol</li>
+                <li>Poder cumplir 5 horas semanales</li>
+            </ul>
+        </div>
         <button onclick="confirmar()">Confirmar</button>
     </div>
 
     <div class="form-section" id="formulario" style="display:none;">
-        <h2>Apartado IC</h2>
+        <h2>Formulario de Postulación</h2>
         
         <form id="postulacionForm">
             <div class="form-group">
-                <label>Nombre y Apellido IC:</label>
-                <input type="text" name="nombre_apellido_ic" required>
+                <label>Nombre completo:</label>
+                <input type="text" name="nombre_completo" required>
             </div>
 
             <div class="form-group">
-                <label>Foto del Documento Nacional de Identidad (DNI IC):</label>
-                <input type="file" name="dni_ic" accept="image/*" required>
+                <label>Correo electrónico:</label>
+                <input type="text" name="correo_electronico" required>
             </div>
 
             <div class="form-group">
-                <label>¿Por qué quiere ingresar al departamento de policía?</label>
-                <textarea name="motivo_ingreso" rows="4" required></textarea>
+                <label>Edad:</label>
+                <input type="text" name="edad" required>
             </div>
 
             <div class="form-group">
-                <label>¿Porque usted cree que debería ser aceptado? Sea extenso con su respuesta.</label>
-                <textarea name="razon_aceptacion" rows="4" required></textarea>
+                <label>Género:</label>
+                <select name="genero" required>
+                    <option value="">Seleccione...</option>
+                    <option value="masculino">Masculino</option>
+                    <option value="femenino">Femenino</option>
+                    <option value="otro">Otro</option>
+                </select>
             </div>
 
             <div class="form-group">
-                <label>¿Está de acuerdo en seguir órdenes de superiores? ¿Por qué?</label>
-                <textarea name="ordenes_superiores" rows="4" required></textarea>
+                <label>¿Tienes experiencia previa en la policía?</label>
+                <select name="experiencia_policia" required>
+                    <option value="">Seleccione...</option>
+                    <option value="si">Sí</option>
+                    <option value="no">No</option>
+                </select>
             </div>
 
             <div class="form-group">
-                <label>¿Qué divisiones conoce del departamento de policía de LS?</label>
-                <textarea name="divisiones_conocidas" rows="4" required></textarea>
+                <label>Motivo para postular:</label>
+                <textarea name="motivo_postulacion" rows="4" required></textarea>
             </div>
 
             <div class="form-group">
-                <label>¿Siendo oficial en patrullaje ordinario subirías a favelas? (Sí o No)</label>
-                <input type="text" name="subir_favelas" required>
+                <label>¿Qué habilidades posees? (Selecciona todas las que apliquen):</label>
+                <div>
+                    <input type="checkbox" name="habilidades[]" value="comunicacion"> Comunicación<br>
+                    <input type="checkbox" name="habilidades[]" value="liderazgo"> Liderazgo<br>
+                    <input type="checkbox" name="habilidades[]" value="trabajo_equipo"> Trabajo en equipo<br>
+                    <input type="checkbox" name="habilidades[]" value="analisis"> Análisis
+                </div>
             </div>
 
             <div class="form-group">
-                <label>¿Siendo oficial en patrullaje ordinario entrarías a Aeropuerto Abandonado? (Sí o No)</label>
-                <input type="text" name="entrar_aeropuerto_abandonado" required>
+                <label>¿Cuál es tu nivel de educación?</label>
+                <select name="nivel_educacion" required>
+                    <option value="">Seleccione...</option>
+                    <option value="secundaria">Secundaria</option>
+                    <option value="preparatoria">Preparatoria</option>
+                    <option value="universidad">Universidad</option>
+                    <option value="postgrado">Postgrado</option>
+                </select>
             </div>
 
             <div class="form-group">
-                <label>Entran tres sujetos armados en un oxxo a robar pero tú los ves desde fuera con tu unidad. ¿Qué harías?</label>
-                <textarea name="accion_oxxo" rows="4" required></textarea>
+                <label>Referencia (nombre y contacto):</label>
+                <input type="text" name="referencia" required>
             </div>
 
             <div class="form-group">
-                <label>Si un sospechoso huye a pie tras un robo, ¿cuál es la primera acción que deberías tomar?</label>
-                <textarea name="accion_huida" rows="4" required></textarea>
-            </div>
-
-            <div class="form-group">
-                <label>¿Cuál es el procedimiento adecuado si descubres que el sospechoso está armado durante un robo?</label>
-                <textarea name="procedimiento_armado" rows="4" required></textarea>
-            </div>
-
-            <div class="form-group">
-                <label>Si recibes un aviso de que se ha activado una alarma silenciosa en una joyería, ¿cómo te aproximarías a la escena?</label>
-                <textarea name="aproximacion_joyeria" rows="4" required></textarea>
-            </div>
-
-            <div class="form-group">
-                <label>¿Cómo actuarías si llegas a una situación donde un sospechoso está reteniendo a un rehén durante un robo?</label>
-                <textarea name="accion_rehen" rows="4" required></textarea>
-            </div>
-
-            <div class="form-group">
-                <label>¿Qué pasos seguirías para coordinar con otros oficiales durante una persecución a un sospechoso de robo?</label>
-                <textarea name="coordinacion_persecucion" rows="4" required></textarea>
-            </div>
-
-            <div class="form-group">
-                <label>¿Cuál es el procedimiento adecuado si el sospechoso intenta huir en un vehículo después de un robo?</label>
-                <textarea name="procedimiento_huida_vehiculo" rows="4" required></textarea>
-            </div>
-
-            <div class="form-group">
-                <label>Defina del 1 al 10 su habilidad de conducción:</label>
-                <input type="text" name="habilidad_conduccion" required>
-            </div>
-
-            <div class="form-group">
-                <label>Defina del 1 al 10 su habilidad con las armas:</label>
-                <input type="text" name="habilidad_armas" required>
-            </div>
-
-            <div class="form-group">
-                <label>Realiza un rol Policial de 20 líneas o más en los que emplees el /me, el /do y Diálogos del Personaje:</label>
-                <textarea name="rol_policia" rows="10" required></textarea>
-            </div>
-
-            <h2>Apartado OOC</h2>
-
-            <div class="form-group">
-                <label>Nombre de Discord:</label>
-                <input type="text" name="nombre_discord" required>
-            </div>
-
-            <div class="form-group">
-                <label>N° de Cuenta General:</label>
-                <input type="text" name="cuenta_general" required>
-            </div>
-
-            <div class="form-group">
-                <label>¿Cuántas horas tienes en el servidor?</label>
-                <input type="text" name="horas_servidor" required>
-            </div>
-
-            <div class="form-group">
-                <label>Edad OOC:</label>
-                <input type="text" name="edad_ooc" required>
-            </div>
-
-            <div class="form-group">
-                <label>Foto de las Stats (Tapa tú IP antes de subir la Imagen):</label>
-                <input type="file" name="foto_stats" accept="image/*" required>
-            </div>
-
-            <div class="form-group">
-                <label>¿Qué significa IC y OOC? Definir.</label>
-                <textarea name="definicion_ic_ooc" rows="4" required></textarea>
-            </div>
-
-            <div class="form-group">
-                <label>¿Qué es MG y MG2? Definir.</label>
-                <textarea name="definicion_mg_mg2" rows="4" required></textarea>
-            </div>
-
-            <div class="form-group">
-                <label>¿Qué es el PG y PG2? Definir.</label>
-                <textarea name="definicion_pg_pg2" rows="4" required></textarea>
-            </div>
-
-            <div class="form-group">
-                <label>¿Qué es RK? Definir.</label>
-                <textarea name="definicion_rk" rows="4" required></textarea>
-            </div>
-
-            <div class="form-group">
-                <label>¿Qué es el FA y NIP? Definir.</label>
-                <textarea name="definicion_fa_nip" rows="4" required></textarea>
-            </div>
-
-            <div class="form-group">
-                <label>Un usuario al que vas a esposar se desconecta. ¿Qué harías?</label>
-                <textarea name="accion_desconexion" rows="4" required></textarea>
-            </div>
-
-            <div class="form-group">
-                <label>¿Cuentas con micrófono? Si la respuesta es sí, defina la calidad del mismo del 1 al 10:</label>
-                <textarea name="micfono_calidad" rows="4" required></textarea>
-            </div>
-
-            <div class="form-group">
-                <label>¿Tienes experiencia en el rol de policía? Si la respuesta es sí, cuéntanos un poco de la misma.</label>
-                <textarea name="experiencia_policia" rows="4" required></textarea>
-            </div>
-
-            <div class="form-group">
-                <label>¿Cuánto tiempo le puedes dedicar semanalmente al Rol de policía?</label>
-                <textarea name="tiempo_semanal" rows="4" required></textarea>
-            </div>
-
-            <div class="form-group">
-                <label>Califique su nivel de rol del 1 al 10 ¿y por qué?</label>
-                <textarea name="nivel_rol" rows="4" required></textarea>
+                <label>Comentarios adicionales:</label>
+                <textarea name="comentarios" rows="4"></textarea>
             </div>
 
             <button type="submit">Enviar</button>
@@ -268,6 +241,5 @@
             });
         });
     </script>
-
 </body>
 </html>
