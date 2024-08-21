@@ -68,180 +68,205 @@
     <div class="form-section" id="formulario" style="display:none;">
         <h2>Apartado IC</h2>
         
-        <div class="form-group">
-            <label>Nombre y Apellido IC:</label>
-            <input type="text" name="nombre_apellido_ic">
-        </div>
+        <form id="postulacionForm">
+            <div class="form-group">
+                <label>Nombre y Apellido IC:</label>
+                <input type="text" name="nombre_apellido_ic" required>
+            </div>
 
-        <div class="form-group">
-            <label>Foto del Documento Nacional de Identidad (DNI IC):</label>
-            <input type="file" name="dni_ic">
-        </div>
+            <div class="form-group">
+                <label>Foto del Documento Nacional de Identidad (DNI IC):</label>
+                <input type="file" name="dni_ic" accept="image/*" required>
+            </div>
 
-        <div class="form-group">
-            <label>¿Por qué quiere ingresar al departamento de policía?</label>
-            <textarea name="motivo_ingreso" rows="4"></textarea>
-        </div>
+            <div class="form-group">
+                <label>¿Por qué quiere ingresar al departamento de policía?</label>
+                <textarea name="motivo_ingreso" rows="4" required></textarea>
+            </div>
 
-        <div class="form-group">
-            <label>¿Porque usted cree que debería ser aceptado? Sea extenso con su respuesta.</label>
-            <textarea name="razon_aceptacion" rows="4"></textarea>
-        </div>
+            <div class="form-group">
+                <label>¿Porque usted cree que debería ser aceptado? Sea extenso con su respuesta.</label>
+                <textarea name="razon_aceptacion" rows="4" required></textarea>
+            </div>
 
-        <div class="form-group">
-            <label>¿Está de acuerdo en seguir órdenes de superiores? ¿Por qué?</label>
-            <textarea name="ordenes_superiores" rows="4"></textarea>
-        </div>
+            <div class="form-group">
+                <label>¿Está de acuerdo en seguir órdenes de superiores? ¿Por qué?</label>
+                <textarea name="ordenes_superiores" rows="4" required></textarea>
+            </div>
 
-        <div class="form-group">
-            <label>¿Qué divisiones conoce del departamento de policía de LS?</label>
-            <textarea name="divisiones_conocidas" rows="4"></textarea>
-        </div>
+            <div class="form-group">
+                <label>¿Qué divisiones conoce del departamento de policía de LS?</label>
+                <textarea name="divisiones_conocidas" rows="4" required></textarea>
+            </div>
 
-        <div class="form-group">
-            <label>¿Siendo oficial en patrullaje ordinario subirías a favelas? (Sí o No)</label>
-            <input type="text" name="subir_favelas">
-        </div>
+            <div class="form-group">
+                <label>¿Siendo oficial en patrullaje ordinario subirías a favelas? (Sí o No)</label>
+                <input type="text" name="subir_favelas" required>
+            </div>
 
-        <div class="form-group">
-            <label>¿Siendo oficial en patrullaje ordinario entrarías a Aeropuerto Abandonado? (Sí o No)</label>
-            <input type="text" name="entrar_aeropuerto_abandonado">
-        </div>
+            <div class="form-group">
+                <label>¿Siendo oficial en patrullaje ordinario entrarías a Aeropuerto Abandonado? (Sí o No)</label>
+                <input type="text" name="entrar_aeropuerto_abandonado" required>
+            </div>
 
-        <div class="form-group">
-            <label>Entran tres sujetos armados en un oxxo a robar pero tú los ves desde fuera con tu unidad. ¿Qué harías?</label>
-            <textarea name="accion_oxxo" rows="4"></textarea>
-        </div>
+            <div class="form-group">
+                <label>Entran tres sujetos armados en un oxxo a robar pero tú los ves desde fuera con tu unidad. ¿Qué harías?</label>
+                <textarea name="accion_oxxo" rows="4" required></textarea>
+            </div>
 
-        <div class="form-group">
-            <label>Si un sospechoso huye a pie tras un robo, ¿cuál es la primera acción que deberías tomar?</label>
-            <textarea name="accion_huida" rows="4"></textarea>
-        </div>
+            <div class="form-group">
+                <label>Si un sospechoso huye a pie tras un robo, ¿cuál es la primera acción que deberías tomar?</label>
+                <textarea name="accion_huida" rows="4" required></textarea>
+            </div>
 
-        <div class="form-group">
-            <label>¿Cuál es el procedimiento adecuado si descubres que el sospechoso está armado durante un robo?</label>
-            <textarea name="procedimiento_armado" rows="4"></textarea>
-        </div>
+            <div class="form-group">
+                <label>¿Cuál es el procedimiento adecuado si descubres que el sospechoso está armado durante un robo?</label>
+                <textarea name="procedimiento_armado" rows="4" required></textarea>
+            </div>
 
-        <div class="form-group">
-            <label>Si recibes un aviso de que se ha activado una alarma silenciosa en una joyería, ¿cómo te aproximarías a la escena?</label>
-            <textarea name="aproximacion_joyeria" rows="4"></textarea>
-        </div>
+            <div class="form-group">
+                <label>Si recibes un aviso de que se ha activado una alarma silenciosa en una joyería, ¿cómo te aproximarías a la escena?</label>
+                <textarea name="aproximacion_joyeria" rows="4" required></textarea>
+            </div>
 
-        <div class="form-group">
-            <label>¿Cómo actuarías si llegas a una situación donde un sospechoso está reteniendo a un rehén durante un robo?</label>
-            <textarea name="accion_rehen" rows="4"></textarea>
-        </div>
+            <div class="form-group">
+                <label>¿Cómo actuarías si llegas a una situación donde un sospechoso está reteniendo a un rehén durante un robo?</label>
+                <textarea name="accion_rehen" rows="4" required></textarea>
+            </div>
 
-        <div class="form-group">
-            <label>¿Qué pasos seguirías para coordinar con otros oficiales durante una persecución a un sospechoso de robo?</label>
-            <textarea name="coordinacion_persecucion" rows="4"></textarea>
-        </div>
+            <div class="form-group">
+                <label>¿Qué pasos seguirías para coordinar con otros oficiales durante una persecución a un sospechoso de robo?</label>
+                <textarea name="coordinacion_persecucion" rows="4" required></textarea>
+            </div>
 
-        <div class="form-group">
-            <label>¿Cuál es el procedimiento adecuado si el sospechoso intenta huir en un vehículo después de un robo?</label>
-            <textarea name="procedimiento_huida_vehiculo" rows="4"></textarea>
-        </div>
+            <div class="form-group">
+                <label>¿Cuál es el procedimiento adecuado si el sospechoso intenta huir en un vehículo después de un robo?</label>
+                <textarea name="procedimiento_huida_vehiculo" rows="4" required></textarea>
+            </div>
 
-        <div class="form-group">
-            <label>Defina del 1 al 10 su habilidad de conducción:</label>
-            <input type="text" name="habilidad_conduccion">
-        </div>
+            <div class="form-group">
+                <label>Defina del 1 al 10 su habilidad de conducción:</label>
+                <input type="text" name="habilidad_conduccion" required>
+            </div>
 
-        <div class="form-group">
-            <label>Defina del 1 al 10 su habilidad con las armas:</label>
-            <input type="text" name="habilidad_armas">
-        </div>
+            <div class="form-group">
+                <label>Defina del 1 al 10 su habilidad con las armas:</label>
+                <input type="text" name="habilidad_armas" required>
+            </div>
 
-        <div class="form-group">
-            <label>Realiza un rol Policial de 20 líneas o más en los que emplees el /me, el /do y Diálogos del Personaje:</label>
-            <textarea name="rol_policia" rows="10"></textarea>
-        </div>
+            <div class="form-group">
+                <label>Realiza un rol Policial de 20 líneas o más en los que emplees el /me, el /do y Diálogos del Personaje:</label>
+                <textarea name="rol_policia" rows="10" required></textarea>
+            </div>
 
-        <h2>Apartado OOC</h2>
+            <h2>Apartado OOC</h2>
 
-        <div class="form-group">
-            <label>Nombre de Discord:</label>
-            <input type="text" name="nombre_discord">
-        </div>
+            <div class="form-group">
+                <label>Nombre de Discord:</label>
+                <input type="text" name="nombre_discord" required>
+            </div>
 
-        <div class="form-group">
-            <label>N° de Cuenta General:</label>
-            <input type="text" name="cuenta_general">
-        </div>
+            <div class="form-group">
+                <label>N° de Cuenta General:</label>
+                <input type="text" name="cuenta_general" required>
+            </div>
 
-        <div class="form-group">
-            <label>¿Cuántas horas tienes en el servidor?</label>
-            <input type="text" name="horas_servidor">
-        </div>
+            <div class="form-group">
+                <label>¿Cuántas horas tienes en el servidor?</label>
+                <input type="text" name="horas_servidor" required>
+            </div>
 
-        <div class="form-group">
-            <label>Edad OOC:</label>
-            <input type="text" name="edad_ooc">
-        </div>
+            <div class="form-group">
+                <label>Edad OOC:</label>
+                <input type="text" name="edad_ooc" required>
+            </div>
 
-        <div class="form-group">
-            <label>Foto de las Stats (Tapa tú IP antes de subir la Imagen):</label>
-            <input type="file" name="foto_stats">
-        </div>
+            <div class="form-group">
+                <label>Foto de las Stats (Tapa tú IP antes de subir la Imagen):</label>
+                <input type="file" name="foto_stats" accept="image/*" required>
+            </div>
 
-        <div class="form-group">
-            <label>¿Qué significa IC y OOC? Definir.</label>
-            <textarea name="definicion_ic_ooc" rows="4"></textarea>
-        </div>
+            <div class="form-group">
+                <label>¿Qué significa IC y OOC? Definir.</label>
+                <textarea name="definicion_ic_ooc" rows="4" required></textarea>
+            </div>
 
-        <div class="form-group">
-            <label>¿Qué es MG y MG2? Definir.</label>
-            <textarea name="definicion_mg_mg2" rows="4"></textarea>
-        </div>
+            <div class="form-group">
+                <label>¿Qué es MG y MG2? Definir.</label>
+                <textarea name="definicion_mg_mg2" rows="4" required></textarea>
+            </div>
 
-        <div class="form-group">
-            <label>¿Qué es el PG y PG2? Definir.</label>
-            <textarea name="definicion_pg_pg2" rows="4"></textarea>
-        </div>
+            <div class="form-group">
+                <label>¿Qué es el PG y PG2? Definir.</label>
+                <textarea name="definicion_pg_pg2" rows="4" required></textarea>
+            </div>
 
-        <div class="form-group">
-            <label>¿Qué es RK? Definir.</label>
-            <textarea name="definicion_rk" rows="4"></textarea>
-        </div>
+            <div class="form-group">
+                <label>¿Qué es RK? Definir.</label>
+                <textarea name="definicion_rk" rows="4" required></textarea>
+            </div>
 
-        <div class="form-group">
-            <label>¿Qué es el FA y NIP? Definir.</label>
-            <textarea name="definicion_fa_nip" rows="4"></textarea>
-        </div>
+            <div class="form-group">
+                <label>¿Qué es el FA y NIP? Definir.</label>
+                <textarea name="definicion_fa_nip" rows="4" required></textarea>
+            </div>
 
-        <div class="form-group">
-            <label>Un usuario al que vas a esposar se desconecta. ¿Qué harías?</label>
-            <textarea name="accion_desconexion" rows="4"></textarea>
-        </div>
+            <div class="form-group">
+                <label>Un usuario al que vas a esposar se desconecta. ¿Qué harías?</label>
+                <textarea name="accion_desconexion" rows="4" required></textarea>
+            </div>
 
-        <div class="form-group">
-            <label>¿Cuentas con micrófono? Si la respuesta es sí, defina la calidad del mismo del 1 al 10:</label>
-            <textarea name="micfono_calidad" rows="4"></textarea>
-        </div>
+            <div class="form-group">
+                <label>¿Cuentas con micrófono? Si la respuesta es sí, defina la calidad del mismo del 1 al 10:</label>
+                <textarea name="micfono_calidad" rows="4" required></textarea>
+            </div>
 
-        <div class="form-group">
-            <label>¿Tienes experiencia en el rol de policía? Si la respuesta es sí, cuéntanos un poco de la misma.</label>
-            <textarea name="experiencia_policia" rows="4"></textarea>
-        </div>
+            <div class="form-group">
+                <label>¿Tienes experiencia en el rol de policía? Si la respuesta es sí, cuéntanos un poco de la misma.</label>
+                <textarea name="experiencia_policia" rows="4" required></textarea>
+            </div>
 
-        <div class="form-group">
-            <label>¿Cuánto tiempo le puedes dedicar semanalmente al Rol de policía?</label>
-            <textarea name="tiempo_semanal" rows="4"></textarea>
-        </div>
+            <div class="form-group">
+                <label>¿Cuánto tiempo le puedes dedicar semanalmente al Rol de policía?</label>
+                <textarea name="tiempo_semanal" rows="4" required></textarea>
+            </div>
 
-        <div class="form-group">
-            <label>Califique su nivel de rol del 1 al 10 ¿y por qué?</label>
-            <textarea name="nivel_rol" rows="4"></textarea>
-        </div>
+            <div class="form-group">
+                <label>Califique su nivel de rol del 1 al 10 ¿y por qué?</label>
+                <textarea name="nivel_rol" rows="4" required></textarea>
+            </div>
 
-        <button type="submit">Enviar</button>
+            <button type="submit">Enviar</button>
+        </form>
     </div>
 
     <script>
         function confirmar() {
             document.getElementById('formulario').style.display = 'block';
         }
+
+        document.getElementById('postulacionForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Evita el envío normal del formulario
+
+            const formData = new FormData(this);
+            const webhookUrl = 'YOUR_WEBHOOK_URL_HERE'; // Reemplaza con tu URL de webhook
+
+            fetch(webhookUrl, {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert('Formulario enviado con éxito.');
+                } else {
+                    alert('Error al enviar el formulario.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Error al enviar el formulario.');
+            });
+        });
     </script>
 
 </body>
